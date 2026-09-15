@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>User Management System</h1>
+
+        <!-- Create User -->
+        <div class="card">
+            <h2>Create User</h2>
+
+            <form id="createUserForm">
+                <input type="text" id="username" placeholder="Enter username" required>
+                <input type="email" id="email" placeholder="Enter email" required>
+
+                <button type="submit">Create User</button>
+            </form>
+
+            <p id="createMessage"></p>
+        </div>
+
+
+        <!-- Users List -->
+        <div class="card">
+            <h2>All Users</h2>
+
+            <button onclick="loadUsers()">Refresh Users</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="userTableBody">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
